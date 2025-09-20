@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.fastapi.serviceName }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.fastapi.port }}
+      targetPort: {{ .Values.fastapi.port }}
+  selector:
+    app: {{ .Values.fastapi.serviceName }}

@@ -17,6 +17,7 @@ services:
       - apinetwork
 
   fastapi:
+    image: awsfox92/fastapi-postgres:latest
     restart: always
     build:
       context: ./

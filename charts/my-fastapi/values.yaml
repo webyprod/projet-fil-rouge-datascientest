@@ -1,0 +1,21 @@
+postgres:
+  serviceName: db
+  port: 5432
+  image:
+    repository: postgres
+    tag: 12.0-alpine
+  user: admin
+  password: password
+  db: storedb
+  hostAuthMethod: trust
+  persistence:
+    enabled: true
+    size: 1Gi
+
+fastapi:
+  serviceName: fastapi
+  port: 5000
+  image:
+    repository: awsfox92/fastapi-postgres
+    tag: latest
+  replicas: 1
